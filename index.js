@@ -4,6 +4,7 @@ const email = document.querySelector('#email');
 const createdDate = document.querySelector('#date');
 const textMessage = document.querySelector('#textMessage');
 const taskStatus = document.querySelector('#taskStatus');
+const textStatus = document.querySelector('#textStatus');
 
 const validateText = (input) => {
     if(input.value.trim() === '') {
@@ -40,12 +41,13 @@ const validateEmail = email => {
 
 taskStatus.addEventListener("change", () => {
     if (taskStatus.checked) {
-        console.log('is checked')
         taskStatus.value = 1
+        textStatus.innerHTML = "Finished"
+
     }
     else {
-        console.log('is not checked')
         taskStatus.value = 0
+        textStatus.innerHTML = "Not finished"
     }
 })
 

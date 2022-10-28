@@ -4,3 +4,14 @@
 body input {
     box-shadow: 5px 5px 20px 0px rgba(51, 51, 51, 0.191);
 }
+p:empty:before {
+    content: 'Not Finished';
+}
+
+.allTasks {
+    background-color:white;
+    /* border: 1px solid grey; */
+}
+.email {
+    font-size: .8rem;
+}
