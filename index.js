@@ -1,8 +1,9 @@
 const form = document.querySelector('#form');
-const inputHead = document.querySelector('#heading');
+const headline = document.querySelector('#headline');
 const email = document.querySelector('#email');
-const date = document.querySelector('#date');
-const message = document.querySelector('#message');
+const createdDate = document.querySelector('#date');
+const textMessage = document.querySelector('#textMessage');
+const taskStatus = document.querySelector('#taskStatus');
 
 const validateText = (input) => {
     if(input.value.trim() === '') {
@@ -37,12 +38,38 @@ const validateEmail = email => {
     }
 }
 
+taskStatus.addEventListener("change", () => {
+    if (taskStatus.checked) {
+        console.log('is checked')
+        taskStatus.value = 1
+    }
+    else {
+        console.log('is not checked')
+        taskStatus.value = 0
+    }
+})
 
-
-
-// console.log(inputHead);
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     
+    // for (let element of e.target)
+    //     console.log(element.value)
+
+    let customerTask = {
+        headline: e.target[0].value,
+        email: e.target[1].value,
+        createdDate: e.target[2].value,
+        textMessage: e.target[3].value,
+        taskStatus: e.target[4].value
+    }
+    console.log(customerTask)
+
+    fetch("https://webapi-uppgift1.azurewebsites.net/api/customerTasks", {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(customerTask)
+    })
 })
