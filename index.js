@@ -6,6 +6,8 @@ const textMessage = document.querySelector('#textMessage');
 const taskStatus = document.querySelector('#taskStatus');
 const textStatus = document.querySelector('#textStatus');
 
+let taskItems = [];
+
 const validateText = (input) => {
     if(input.value.trim() === '') {
 
@@ -66,6 +68,8 @@ form.addEventListener('submit', (e) => {
         taskStatus: e.target[4].value
     }
     console.log(customerTask)
+    
+  
 
     fetch("https://webapi-uppgift1.azurewebsites.net/api/customerTasks", {
         method: 'post',
@@ -73,5 +77,47 @@ form.addEventListener('submit', (e) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(customerTask)
+
+
     })
+
+
 })
+
+// function getTasks(task) {
+//     const tasks = {
+//         headline,
+//         email, 
+//         createdDate,
+//         textMessage,
+//         taskStatus
+//     };
+//     taskItems.push(task);
+//     console.log(taskItems);
+
+//     fetch("https://webapi-uppgift1.azurewebsites.net/api/customerTasks", {
+//         method: 'get',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(customerTask)
+
+
+//     })
+// }
+
+// const tasks = document.querySelector('#tasks');
+// const listTasks = () => {
+//     // output.innerHTML = '';
+//     tasks.forEach(task => {
+//         output.innerHTML += `
+//         <div id="${task.id}" class="d-flex justify-content-between align-items-center border bg-white p-2 mb-2">
+//                 <h3 class="text-center p-4">${task.headline}</h3>
+//                 <p class="m-0 h4">${task.textMessage}</p>
+//                 <button type ="button" class="btn btn-danger btn-sm">X</button>
+//             </div>
+//             `
+//     })
+// }
+
+// listTasks();
