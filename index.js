@@ -49,7 +49,7 @@ taskStatus.addEventListener("change", () => {
     }
     else {
         taskStatus.value = 0
-        textStatus.innerHTML = "Not finished"
+        textStatus.innerHTML = ""
     }
 })
 
