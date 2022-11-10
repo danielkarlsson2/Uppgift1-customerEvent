@@ -41,17 +41,17 @@ const validateEmail = email => {
     }
 }
 
-taskStatus.addEventListener("change", () => {
-    if (taskStatus.checked) {
-        taskStatus.value = 1
-        textStatus.innerHTML = "Finished"
+// taskStatus.addEventListener("change", () => {
+//     if (taskStatus.checked) {
+//         taskStatus.value = 1
+//         textStatus.innerHTML = "Finished"
 
-    }
-    else {
-        taskStatus.value = 0
-        textStatus.innerHTML = ""
-    }
-})
+//     }
+//     else {
+//         taskStatus.value = 0
+//         textStatus.innerHTML = ""
+//     }
+// })
 
 
 form.addEventListener('submit', (e) => {

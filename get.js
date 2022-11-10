@@ -26,7 +26,7 @@ const getTasks = async () => {
         // date = item.CreatedDate
         
         output.innerHTML += `
-        <div id="${item.Id}" class="align-items-center border bg-white p-2 mb-2 d-flex justify-content-between">
+        <div id="${item.Id}" class="align-items-center border bg-white p-2 mb-2 d-flex justify-content-between mt-3">
 
             <div class="d-flex flex-column p-2 w-50">
                     <h2 class="">${item.Headline}</h2>
@@ -36,7 +36,7 @@ const getTasks = async () => {
                     <button class="btn btn-primary w-25">Edit</button>
                 </div>
                 <div class="d-flex flex-column justify-content-between p-2 border">
-                    <p>${item.CreatedDate}</p>
+                    <p class>${item.CreatedDate}</p>
                     <button class="btn">${item.TaskStatus === true ? "Done" : "Not done"}</button>
                 </div>
             </div>
