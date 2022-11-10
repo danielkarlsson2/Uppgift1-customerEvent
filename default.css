@@ -38,3 +38,7 @@ p:empty:before {
     border: 2px solid green;
     background-color: rgba(0, 128, 0, 0.285);
 }
+.span {
+    color: grey;
+    font-size: .8rem;
+}

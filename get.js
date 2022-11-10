@@ -1,7 +1,7 @@
 const output = document.querySelector('#tasks');
-const headOutput =  document.querySelector('#headlineOutput');
-const textOutput =  document.querySelector('#textOutput');
-const emailOutput =  document.querySelector('#emailOutput');
+// const headOutput =  document.querySelector('#headlineOutput');
+// const textOutput =  document.querySelector('#textOutput');
+// const emailOutput =  document.querySelector('#emailOutput');
 
 const getTasks = async () => {
     const res = await fetch("https://webapi-uppgift1.azurewebsites.net/api/customerTasks")
@@ -37,8 +37,10 @@ const getTasks = async () => {
                 </div>
                 
                 <div class="d-flex flex-column justify-content-between p-2">
-                    <p class="mt-5">${item.CreatedDate}</p>
-                    <button class="btn notDone mt-auto">${item.TaskStatus === true ? "Done" : "Not done"}</button>
+                    <p class="mt-5  ">${item.CreatedDate}</p>
+                    <br>    
+                    <span class="span">Status:</span>
+                    <button class="btn mt-auto ${item.TaskStatus == true ? "Done" : 'notDone'} ">${item.TaskStatus === true ? "Done" : "Not done"}</button>
                 </div>
             </div>
             `
