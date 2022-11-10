@@ -26,18 +26,19 @@ const getTasks = async () => {
         // date = item.CreatedDate
         
         output.innerHTML += `
-        <div id="${item.Id}" class="align-items-center border bg-white p-2 mb-2 d-flex justify-content-between mt-3">
+        <div id="${item.Id}" class=" border rounded bg-white p-2 mb-2 d-flex justify-content-between mt-3">
 
-            <div class="d-flex flex-column p-2 w-50">
+            <div class="d-flex flex-column p-2 w-50 ">
                     <h2 class="">${item.Headline}</h2>
                     <p class="">- ${item.TextMessage}</p>
                     <p class="">${item.Email}</p>
                 
-                    <button class="btn btn-primary w-25">Edit</button>
+                    <button class="btn btn-success w-50">Comment</button>
                 </div>
-                <div class="d-flex flex-column justify-content-between p-2 border">
-                    <p class>${item.CreatedDate}</p>
-                    <button class="btn">${item.TaskStatus === true ? "Done" : "Not done"}</button>
+                
+                <div class="d-flex flex-column justify-content-between p-2">
+                    <p class="mt-5">${item.CreatedDate}</p>
+                    <button class="btn notDone mt-auto">${item.TaskStatus === true ? "Done" : "Not done"}</button>
                 </div>
             </div>
             `

@@ -29,3 +29,12 @@ p:empty:before {
     background-color: #333;
     outline: 2px solid grey;
 }
+
+.notDone {
+    border: 2px solid rgba(255, 0, 0, 0.794);
+    background-color: rgba(255, 0, 0, 0.137);
+}
+.Done {
+    border: 2px solid green;
+    background-color: rgba(0, 128, 0, 0.285);
+}
