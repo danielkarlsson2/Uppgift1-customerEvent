@@ -9,13 +9,16 @@ body {
 body input {
     box-shadow: 5px 5px 20px 0px rgba(51, 51, 51, 0.191);
 }
-p:empty:before {
+/* p:empty:before {
     content: 'Not Finished';
-}
+} */
 
 .allTasks {
     background-color:white;
     /* border: 1px solid grey; */
+}
+.head {
+    text-decoration: underline;
 }
 .email {
     font-size: .8rem;
@@ -28,6 +31,20 @@ p:empty:before {
 .BtnCreate:hover {
     background-color: #333;
     outline: 2px solid grey;
+}
+.btnSm {
+    width: 100px;
+}
+.btnSm:hover {
+    opacity: 80%;
+}
+
+.taskCard {
+    box-shadow: 5px 5px 20px 5px rgba(51, 51, 51, 0.156);
+}
+
+.comment {
+    font-size: .7rem;
 }
 
 .notDone {
