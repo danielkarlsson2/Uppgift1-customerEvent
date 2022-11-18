@@ -1,10 +1,4 @@
 const output = document.querySelector('#tasks');
-// const headOutput =  document.querySelector('#headlineOutput');
-// const textOutput =  document.querySelector('#textOutput');
-// const emailOutput =  document.querySelector('#emailOutput');
-
-
-      
 
 const getTasks = async () => {
     const res = await fetch("https://webapi-uppgift1.azurewebsites.net/api/customerTasks")
@@ -20,15 +14,12 @@ const getTasks = async () => {
         return 0;
     }
     data.sort(compare); 
-
     console.log(data)
 
 
     for(let item of data) {
 
-
         const date = new Date();
-        // date = item.CreatedDate
         
         output.innerHTML += `
         <div id="${item.Id}" class=" border rounded bg-white p-2 mb-2 d-flex justify-content-between mt-3 taskCard">
@@ -59,11 +50,8 @@ const getTasks = async () => {
                 </div>
             </div>
             `
-            // console.log(date.toLocaleString('sv-SV'));
         }        
         
     }
 
 getTasks();
-
-{/* <button class="btn btn-success w-50 comment">Add Comment</button> */}
